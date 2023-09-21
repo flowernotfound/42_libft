@@ -6,9 +6,11 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:23:14 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/21 16:14:13 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/22 05:25:20 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *buf, int c, size_t n)
 {

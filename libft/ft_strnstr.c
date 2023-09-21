@@ -6,9 +6,11 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:53:20 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/22 04:58:02 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/22 05:27:09 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strnstr(const char *s, const char *find, size_t n)
 {

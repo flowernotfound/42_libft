@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 17:18:00 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/20 17:22:43 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/22 05:27:18 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,9 @@ int	ft_toupper(int c);
 int	ft_tolower(int c);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+void	*ft_memchr(const void *buf, int c, size_t n);
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *s, const char *find, size_t n);
 
 #endif

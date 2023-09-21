@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 19:53:20 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/22 04:58:02 by hmitsuyo         ###   ########.fr       */
+/*   Created: 2023/09/22 05:03:27 by hmitsuyo          #+#    #+#             */
+/*   Updated: 2023/09/22 05:04:03 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *s, const char *find, size_t n)
+int	ft_atoi(char *s)
 {
-	size_t	i;
-	size_t	j;
 
-	if (find[0] == '\0')
-		return ((char *)s);
-	i = 0;
-	while (s[i] && i < n)
-	{
-		j = 0;
-		if (s[i] == find[j])
-		{
-			while (s[i + j] == find[j] && (i + j) < n)
-				j++;
-			if (find[j] == '\0')
-				return ((char *)&s[i]);
-		}
-		i++;
-	}
-	return (NULL);
 }

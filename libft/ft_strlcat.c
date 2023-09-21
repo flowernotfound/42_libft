@@ -24,10 +24,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	src_length = 0;
 	while (src[src_length])
 		src_length++;
-	if (size <= dest_length)
+	if (n <= dest_length)
 		return (size + src_length);
 	i = 0;
-	while (src[i] && dest_length + i < size - 1)
+	while (src[i] && dest_length + i < n - 1)
 	{
 		dest[dest_length + i] = src[i];
 		i++;

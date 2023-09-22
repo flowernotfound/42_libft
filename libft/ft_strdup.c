@@ -6,9 +6,11 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:03:58 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/22 19:11:10 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/22 21:31:23 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

@@ -6,7 +6,7 @@
 #    By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 04:41:50 by hmitsuyo          #+#    #+#              #
-#    Updated: 2023/09/25 03:57:52 by hmitsuyo         ###   ########.fr        #
+#    Updated: 2023/09/25 04:19:01 by hmitsuyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ SRCS = ft_atoi.c \
        ft_strmapi.c \
        ft_striteri.c \
        ft_putchar_fd.c \
-       ft_putstr_fd.c
+       ft_putstr_fd.c \
+       ft_putendl_fd.c
 LIB = libft.a
 LIB = libft.a
 OBJ = $(SRCS:.c=.o)

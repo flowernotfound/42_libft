@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 16:27:19 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/23 22:19:11 by hmitsuyo         ###   ########.fr       */
+/*   Created: 2023/09/24 19:27:56 by hmitsuyo          #+#    #+#             */
+/*   Updated: 2023/09/24 21:44:56 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,74 @@
 int	count_words(char const *s, char c)
 {
 	int	count;
-	int	i;
 	int	in_word;
 
+	if (!s)
+		return (0);
 	count = 0;
-	i = 0;
 	in_word = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c)
-			in_word = 0;
-		else if (in_word == 0)
+		if (*s == c)
 		{
-			in_word = 1;
-			count++;
+			in_word = 0;
 		}
-		i++;
+		else if (*s != c && in_word == 0)
+		{
+			count++;
+			in_word = 1;
+		}
+		s++;
 	}
 	return (count);
+}
+
+void	free_words(char **words, int i)
+{
+	int	j;
+
+	j = 0;
+	while (j < i)
+	{
+		free(words[j]);
+		j++;
+	}
+	free(words);
+}
+
+int	put_words(char **words, char const *s, char c)
+{
+	int	i;
+	int	start;
+
+	i = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			start = 0;
+			while (s[start] && s[start] != c)
+				start++;
+			words[i] = ft_substr(s, 0, start);
+			if (!words[i])
+			{
+				free_words(words, i);
+				return (0);
+			}
+			i++;
+			s += start;
+		}
+		else
+			s++;
+	}
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
 	int		counts;
-	int		i;
-	int		j;
-	int		start;
+	int		success;
 
 	if (!s)
 		return (NULL);
@@ -49,21 +90,9 @@ char	**ft_split(char const *s, char c)
 	words = (char **)malloc(sizeof(char *) * (counts + 1));
 	if (!words)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			start = i;
-			while (s[i] && s[i] != c)
-				i++;
-			words[j] = ft_substr(s, start, i - start);
-			j++;
-		}
-		else
-			i++;
-	}
-	words[j] = NULL;
+	success = put_words(words, s, c);
+	if (!success)
+		return (NULL);
+	words[counts] = NULL;
 	return (words);
 }

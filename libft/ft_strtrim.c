@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 23:00:44 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/23 09:02:35 by hmitsuyo         ###   ########.fr       */
+/*   Created: 2023/09/23 02:28:55 by hmitsuyo          #+#    #+#             */
+/*   Updated: 2023/09/23 09:11:29 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	is_set(char c, const char *set)
 {
-	size_t	length;
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, const char *set)
+{
+	char	*start;
+	char	*end;
 	char	*p;
 
-	if (!s1 || !s2)
+	if (!s1 || !set)
 		return (NULL);
-	length = ft_strlen((char *)s1) + ft_strlen((char *)s2);
-	p = (char *)malloc(sizeof(char) * (length + 1));
-	if (p == NULL)
-		return (NULL);
-	ft_strlcpy(p, s1, length + 1);
-	ft_strlcat(p, s2, length + 1);
+	start = (char *)s1;
+	end = start + ft_strlen((char *)s1);
+	while (*start && is_set(*start, set))
+		start++;
+	while (start < end && is_set(*(end - 1), set))
+		end--;
+	p = ft_substr(start, 0, end - start);
 	return (p);
 }

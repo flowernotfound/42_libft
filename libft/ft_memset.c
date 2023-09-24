@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 00:23:49 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/18 00:23:51 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/23 09:00:45 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memset(void *dest, int c, size_t n)
 		s[i] = c;
 		i++;
 	}
-	return (buf);
+	return ((void *)s);
 }

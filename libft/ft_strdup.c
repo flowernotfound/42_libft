@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:03:58 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/22 21:31:23 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/23 09:01:53 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	int		i;
 	char	*p;
 
-	length = ft_strlen(s);
+	length = ft_strlen((char *)s);
 	p = (char *)malloc(sizeof(char) * (length + 1));
 	if (p == NULL)
 		return (NULL);

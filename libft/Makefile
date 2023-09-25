@@ -6,7 +6,7 @@
 #    By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 04:41:50 by hmitsuyo          #+#    #+#              #
-#    Updated: 2023/09/25 05:39:53 by hmitsuyo         ###   ########.fr        #
+#    Updated: 2023/09/25 09:08:05 by hmitsuyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,13 +45,19 @@ SRCS = ft_atoi.c \
        ft_putstr_fd.c \
        ft_putendl_fd.c \
        ft_putnbr_fd.c
+BONUS = ft_lstnew.c
 LIB = libft.a
 OBJ = $(SRCS:.c=.o)
+BONUS_OBJ = $(BONUS:.c=.o)
 
 all: $(LIB)
 
 $(LIB): $(OBJ)
 	ar rc $(LIB) $(OBJ)
+	ranlib $(LIB)
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rc $(LIB) $(OBJ) $(BONUS_OBJ)
 	ranlib $(LIB)
 
 %.o: %.c

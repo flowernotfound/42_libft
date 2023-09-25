@@ -6,7 +6,7 @@
 #    By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 04:41:50 by hmitsuyo          #+#    #+#              #
-#    Updated: 2023/09/25 13:00:38 by hmitsuyo         ###   ########.fr        #
+#    Updated: 2023/09/25 18:10:20 by hmitsuyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ BONUS = ft_lstnew.c \
 	ft_lstlast.c \
 	ft_lstadd_back.c \
 	ft_lstdelone.c \
-	ft_lstclear.c
+	ft_lstclear.c \
+	ft_lstiter.c
 LIB = libft.a
 OBJ = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS:.c=.o)

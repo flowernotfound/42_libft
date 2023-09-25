@@ -6,7 +6,7 @@
 #    By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 04:41:50 by hmitsuyo          #+#    #+#              #
-#    Updated: 2023/09/25 09:08:05 by hmitsuyo         ###   ########.fr        #
+#    Updated: 2023/09/25 11:22:08 by hmitsuyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ SRCS = ft_atoi.c \
        ft_putstr_fd.c \
        ft_putendl_fd.c \
        ft_putnbr_fd.c
-BONUS = ft_lstnew.c
+BONUS = ft_lstnew.c \
+	ft_lstadd_front.c
 LIB = libft.a
 OBJ = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS:.c=.o)
@@ -64,7 +65,7 @@ bonus: $(OBJ) $(BONUS_OBJ)
 	cc $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean:
 	rm -f $(LIB)

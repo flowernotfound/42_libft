@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 05:46:07 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/22 06:29:45 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:41:12 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	*ft_calloc(size_t count, size_t n)
 	total = count * n;
 	p = malloc(total);
 	if (p == NULL)
+	{
+		errno = ENOMEM;
 		return (NULL);
+	}
 	ft_bzero(p, total);
 	return (p);
 }

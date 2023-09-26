@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 17:18:00 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/25 23:58:30 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:41:37 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <errno.h>
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 05:03:27 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/26 16:28:35 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:28:06 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,38 @@ int	is_space(char c)
 		|| c == '\v' || c == '\f' || c == '\r');
 }
 
-int	ft_atoi(const char *s)
+long	check_overflow(int sign)
+{
+	if (sign == 1)
+		return (LONG_MAX);
+	else
+		return (LONG_MIN);
+}
+
+long	convert(const char *s, int *i, int sign)
 {
 	long	n;
 	long	div;
-	int		i;
-	int		sign;
 	int		mod;
 
 	div = LONG_MAX / 10;
 	mod = LONG_MAX % 10;
+	n = 0;
+	while (s[*i] >= '0' && s[*i] <= '9')
+	{
+		if (n > div || (n == div && (s[*i] - '0') > mod))
+			return (check_overflow(sign));
+		n = n * 10 + (s[*i] - '0');
+		(*i)++;
+	}
+	return (n);
+}
+
+int	ft_atoi(const char *s)
+{
+	int		i;
+	int		sign;
+
 	i = 0;
 	while (is_space(s[i]))
 		i++;
@@ -38,34 +60,5 @@ int	ft_atoi(const char *s)
 			sign = -1;
 		i++;
 	}
-	n = 0;
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		if (n > div || (n == div && (s[i] - '0') > mod))
-		{
-			if (sign == 1)
-				return ((int)LONG_MAX);
-			else
-				return ((int)LONG_MIN);
-		}
-		n = n * 10 + (s[i] - '0');
-		i++;
-	}
-	return ((int)(n * sign));
-}
-
-#include <stdio.h>
-#include <stdlib.h>
-
-int main (void)
-{
-	printf("%d\n", atoi("2147483647"));
-	printf("%d\n", atoi("2147483648"));
-	printf("%d\n", atoi("-2147483649"));
-
-	printf("%d\n", ft_atoi("2147483647"));
-	printf("%d\n", ft_atoi("2147483648"));
-	printf("%d\n", ft_atoi("-2147483648"));
-	printf("%d\n", ft_atoi("-2147483649"));
-
+	return ((int)(convert(s, &i, sign) * sign));
 }

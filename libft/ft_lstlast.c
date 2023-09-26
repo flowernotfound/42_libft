@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:31:38 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/25 11:44:47 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 00:00:36 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_list	*ft_lstlast(t_list *lst)
 		return (NULL);
 	current = lst;
 	while (current->next != NULL)
-		current = cuurent->next;
+		current = current->next;
 	return (current);
 }

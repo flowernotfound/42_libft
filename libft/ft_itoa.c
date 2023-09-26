@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 21:51:16 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/26 11:47:32 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:38:43 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,15 @@ int	number_digits(int n)
 
 void	put_num(char *s, int n, int digits, int is_negative)
 {
-	while (n)
+	if (n == INT_MIN)
+	{
+		s[digits - 1] = '8';
+		n /= 10;
+		digits--;
+	}
+	if (is_negative)
+		n = -n;
+	while (digits > 0)
 	{
 		digits--;
 		s[digits] = (n % 10) + '0';
@@ -57,8 +65,6 @@ char	*ft_itoa(int n)
 	s[digits] = '\0';
 	if (n == 0)
 		s[0] = '0';
-	else if (n == INT_MIN)
-		ft_strlcpy(s, "-2147483648", 12);
 	else
 		put_num(s, n, digits, is_negative);
 	return (s);

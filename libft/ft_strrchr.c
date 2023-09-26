@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 21:31:12 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/23 09:03:55 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 10:27:59 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strrchr(const char *str, int c)
 	int	length;
 
 	length = ft_strlen((char *)str);
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return ((char *)(str + length));
 	while (length >= 0)
 	{
-		if (str[length] == c)
+		if (str[length] == (unsigned char)c)
 			return ((char *)(str + length));
 		length--;
 	}

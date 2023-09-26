@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:22:24 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/26 11:06:11 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:56:04 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	s_length = ft_strlen((char *)s);
+	s_length = ft_strlen(s);
 	if (start >= s_length || len == 0)
 		return (ft_strdup(""));
 	if (len >= s_length - start)

@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 01:03:54 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/25 04:32:51 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:56:27 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s)
 		return (NULL);
-	length = ft_strlen((char *)s);
+	length = ft_strlen(s);
 	re = (char *)malloc(sizeof(char) * (length + 1));
 	if (!re)
 		return (NULL);

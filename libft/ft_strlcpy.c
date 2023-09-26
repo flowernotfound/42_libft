@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 05:05:41 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/23 09:03:34 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:53:55 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 	size_t	length;
 	size_t	i;
 
-	length = ft_strlen((char *)src);
+	length = ft_strlen(src);
 	if (n == 0)
 		return (length);
 	i = 0;

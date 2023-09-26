@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:26:06 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/25 11:29:15 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:54:22 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_lstsize(t_list *lst)
 
 	size = 0;
 	current = lst;
-	while (lst != NULL)
+	while (current != NULL)
 	{
 		size++;
 		current = current->next;

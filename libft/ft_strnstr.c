@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:53:20 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/27 06:53:39 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/27 08:47:56 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strnstr(const char *s, const char *find, size_t n)
 	size_t	i;
 	size_t	j;
 
-	if (!s || !find)
-		return (NULL);
 	if (find[0] == '\0')
 		return ((char *)s);
 	i = 0;

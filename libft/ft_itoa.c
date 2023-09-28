@@ -6,13 +6,13 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 21:51:16 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/26 12:38:43 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/28 09:03:02 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	number_digits(int n)
+static int	number_digits(int n)
 {
 	int	digits;
 
@@ -29,7 +29,7 @@ int	number_digits(int n)
 	return (digits);
 }
 
-void	put_num(char *s, int n, int digits, int is_negative)
+static void	put_num(char *s, int n, int digits, int is_negative)
 {
 	if (n == INT_MIN)
 	{

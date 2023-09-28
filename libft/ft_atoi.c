@@ -6,19 +6,19 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 05:03:27 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/26 19:28:06 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/28 09:03:26 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_space(char c)
+static int	is_space(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f' || c == '\r');
 }
 
-long	check_overflow(int sign)
+static long	check_overflow(int sign)
 {
 	if (sign == 1)
 		return (LONG_MAX);
@@ -26,7 +26,7 @@ long	check_overflow(int sign)
 		return (LONG_MIN);
 }
 
-long	convert(const char *s, int *i, int sign)
+static long	convert(const char *s, int *i, int sign)
 {
 	long	n;
 	long	div;

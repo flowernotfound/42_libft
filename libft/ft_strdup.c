@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:03:58 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/09/26 22:57:56 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:53:58 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ char	*ft_strdup(const char *s)
 	length = ft_strlen(s);
 	p = (char *)malloc(sizeof(char) * (length + 1));
 	if (p == NULL)
-	{
-		errno = ENOMEM;
 		return (NULL);
-	}
 	i = 0;
 	while (i < length)
 	{
